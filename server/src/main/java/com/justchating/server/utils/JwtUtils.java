@@ -20,6 +20,10 @@ public class JwtUtils {
     @Value("${jwt.expiration}")
     private long expiration;
 
+    public JwtUtils() {
+        System.out.println("JwtUtils instance created");
+    }
+
     public String generateToken(String subject) {
         Map<String, Object> claims = new HashMap<>();
         return createToken(claims, subject);

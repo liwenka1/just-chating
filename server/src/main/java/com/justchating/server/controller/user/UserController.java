@@ -28,6 +28,11 @@ public class UserController {
         String id = user.getId();
         return userService.findUserById(id);
     }
+    @PostMapping("/getByName")
+    public User getUserByName(@RequestBody User user) {
+        String name = user.getName();
+        return userService.findUserByName(name);
+    }
 
     // 创建用户
     @PostMapping("/create")
